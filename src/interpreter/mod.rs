@@ -112,6 +112,28 @@ impl ::std::fmt::Display for Error {
 	}
 }
 
+impl ::std::error::Error for Error {
+	fn description(&self) -> &str {
+		match *self {
+			Error::Program(ref s) => s,
+			Error::Validation(ref s) => s,
+			Error::Initialization(ref s) => s,
+			Error::Function(ref s) => s,
+			Error::Table(ref s) => s,
+			Error::Memory(ref s) => s,
+			Error::Variable(ref s) => s,
+			Error::Global(ref s) => s,
+			Error::Local(ref s) => s,
+			Error::Stack(ref s) => s,
+			Error::Interpreter(ref s) => s,
+			Error::Value(ref s) => s,
+			Error::Native(ref s) => s,
+			Error::Trap(ref s) => s,
+			Error::User(_) => "User error",
+		}
+	}
+}
+
 impl<U> From<U> for Error where U: UserError + Sized {
 	fn from(e: U) -> Self {
 		Error::User(Box::new(e))
