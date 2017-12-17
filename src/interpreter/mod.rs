@@ -147,7 +147,8 @@ mod tests;
 
 pub use self::memory::MemoryInstance;
 pub use self::module::{ModuleInstance, ModuleInstanceInterface,
-	ItemIndex, ExportEntryType, CallerContext, ExecutionParams, FunctionSignature};
+	ItemIndex, ExportEntryType, CallerContext, ExecutionParams, FunctionSignature,
+	InternalFunctionReference, InternalFunction};
 pub use self::table::TableInstance;
 pub use self::program::ProgramInstance;
 pub use self::value::RuntimeValue;

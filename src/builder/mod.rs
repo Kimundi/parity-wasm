@@ -12,7 +12,8 @@ mod global;
 mod data;
 
 pub use self::module::{module, from_module, ModuleBuilder};
-pub use self::code::{signatures, signature, function};
+pub use self::code::{signatures, signature, function, FunctionBuilder, SignatureBuilder};
 pub use self::import::import;
-pub use self::export::export;
+pub use self::export::{export, ExportBuilder, ExportInternalBuilder};
 pub use self::global::global;
+pub use self::invoke::{Identity, Invoke};
